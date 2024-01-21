@@ -5,16 +5,17 @@ pipeline {
         APP_REPO_NAME="cmakkaya/microservices-application-vet-clinic-production"
     }
     
-    stages {
-        stage ('Clean Workspace'){
-            steps{
-                cleanWs()
-            }
-        }      
+    stages {    
         stage('Deploy to GKE') {
             steps{
                 sh "kubectl apply -f ."
             }
         }    
     }    
+    post {
+        always {
+            echo 'Deleting all local images'
+            sh 'docker image prune -af'
+        }
+    }
 }
