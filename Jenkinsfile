@@ -6,9 +6,9 @@ pipeline {
     }
     
     stages {    
-        stage('Deploy to GKE') {
+        stage('Deploy to GKE cluster') {
             steps{
-                sh "kubectl delete -f ."
+                sh "kubectl apply -f ."
             }
         }    
     }    
