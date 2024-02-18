@@ -1,2 +1,2 @@
 # deploying-to-vet-clinic-mono-to-gke-cluster
-deploying-to-vet-clinic-mono-to-gke-cluster-for-mül
+deploying-to-vet-clinic-mono-to-gke-cluster-(just yaml files)
